@@ -6,6 +6,7 @@ import { sortZA } from "../assets/functions/sortZA"
 import { bestRate } from "../assets/functions/bestRate"
 import { dateAscending } from "../assets/functions/dateAscending"
 import { dateDescending } from "../assets/functions/dateDescending"
+import { Button } from "../components/Button"
 
 export const Home = () => {
   const [data, setData] = useState(movies)
@@ -13,31 +14,17 @@ export const Home = () => {
   return (
     <>
       <header className='flex gap-4 justify-center'>
-        <button
+        <Button
+          text='Sort by Date Ascending'
           onClick={() => dateAscending(data, setData)}
-          className='cursor-pointer'>
-          Sort by Date Ascending
-        </button>
-        <button
+        />
+        <Button
+          text='Sort by Date Descending'
           onClick={() => dateDescending(data, setData)}
-          className='cursor-pointer'>
-          Sort by Date Descending
-        </button>
-        <button
-          onClick={() => bestRate(data, setData)}
-          className='cursor-pointer'>
-          Best Rate
-        </button>
-        <button
-          onClick={() => sortAZ(data, setData)}
-          className='cursor-pointer'>
-          A-Z
-        </button>
-        <button
-          onClick={() => sortZA(data, setData)}
-          className='cursor-pointer'>
-          Z-A
-        </button>
+        />
+        <Button text='Best Rate' onClick={() => bestRate(data, setData)} />
+        <Button text='A-Z' onClick={() => sortAZ(data, setData)} />
+        <Button text='Z-A' onClick={() => sortZA(data, setData)} />
       </header>
       <main>
         <RenderMovies data={data} />
