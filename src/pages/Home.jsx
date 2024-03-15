@@ -13,8 +13,6 @@ export const Home = () => {
   // State for Movies Data
   const [data, setData] = useState(movies)
   const [filteredData, setfilteredData] = useState([])
-  console.log(filteredData)
-  console.log(data)
 
   // State for User Input
   const [userInput, setUserInput] = useState("")
@@ -42,17 +40,18 @@ export const Home = () => {
         </div>
         <form className='m-auto' onSubmit={(e) => e.preventDefault()}>
           <input
-            className='bg-blue-200'
+            className='border-2 border-gray-300 rounded-full'
             type='text'
             name='userInput'
             id='userInput'
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
+            placeholder='Search a movie title'
           />
         </form>
       </header>
       <main>
-        <RenderMovies data={filteredData} />
+        <RenderMovies data={data} />
       </main>
     </>
   )
