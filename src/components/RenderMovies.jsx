@@ -1,7 +1,7 @@
 export const RenderMovies = ({ data }) => {
   return (
     <main>
-      <section className='grid grid-cols-3 gap-4 p-6 bg-[#232327]'>
+      <section className='grid sm:grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-[#232327]'>
         {data.map((movie, index) => {
           return (
             <article
