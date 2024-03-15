@@ -1,5 +1,3 @@
-// import movies from "../assets/data/movies"
-
 export const RenderMovies = ({ data }) => {
   return (
     <main>

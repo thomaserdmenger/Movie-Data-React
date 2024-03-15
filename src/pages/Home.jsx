@@ -51,7 +51,8 @@ export const Home = () => {
         </form>
       </header>
       <main>
-        <RenderMovies data={data} />
+        {userInput.length === 0 && <RenderMovies data={data} />}
+        {userInput.length !== 0 && <RenderMovies data={filteredData} />}
       </main>
     </>
   )
