@@ -1,30 +1,29 @@
 import movies from "../assets/data/movies"
+import { useState } from "react"
+import { RenderMovies } from "../components/RenderMovies"
+import { sortAZ } from "../assets/functions/sortAZ"
+import { sortZA } from "../assets/functions/sortZA"
 
 export const Home = () => {
+  const [data, setData] = useState(movies)
+
   return (
-    <main>
-      {/* Render Movies Grid */}
-      <section className='grid grid-cols-3 gap-4 p-4'>
-        {movies.map((movie, index) => {
-          return (
-            <article
-              key={index}
-              className='p-2 border-2 border-red-300 rounded-lg'>
-              <h2>{movie.title}</h2>
-              <p>{movie.year}</p>
-              <p>{movie.director}</p>
-              <p>{movie.duration}</p>
-              <div className='flex gap-2'>
-                {movie.genre.map((item, index) => {
-                  return <p key={index}>{item}</p>
-                })}
-              </div>
-              <p>{movie.rate}</p>
-            </article>
-          )
-        })}
-      </section>
-      c
-    </main>
+    <>
+      <header className='flex gap-4 justify-center'>
+        <button
+          onClick={() => sortAZ(data, setData)}
+          className='cursor-pointer'>
+          A-Z
+        </button>
+        <button
+          onClick={() => sortZA(data, setData)}
+          className='cursor-pointer'>
+          Z-A
+        </button>
+      </header>
+      <main>
+        <RenderMovies data={data} />
+      </main>
+    </>
   )
 }
