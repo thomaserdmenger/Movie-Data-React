@@ -4,6 +4,8 @@ import { RenderMovies } from "../components/RenderMovies"
 import { sortAZ } from "../assets/functions/sortAZ"
 import { sortZA } from "../assets/functions/sortZA"
 import { bestRate } from "../assets/functions/bestRate"
+import { dateAscending } from "../assets/functions/dateAscending"
+import { dateDescending } from "../assets/functions/dateDescending"
 
 export const Home = () => {
   const [data, setData] = useState(movies)
@@ -11,6 +13,16 @@ export const Home = () => {
   return (
     <>
       <header className='flex gap-4 justify-center'>
+        <button
+          onClick={() => dateAscending(data, setData)}
+          className='cursor-pointer'>
+          Sort by Date Ascending
+        </button>
+        <button
+          onClick={() => dateDescending(data, setData)}
+          className='cursor-pointer'>
+          Sort by Date Descending
+        </button>
         <button
           onClick={() => bestRate(data, setData)}
           className='cursor-pointer'>
