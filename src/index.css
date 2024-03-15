@@ -9,3 +9,7 @@ img {
 .active {
   font-weight: 700;
 }
+
+body {
+  background-color: #232327;
+}

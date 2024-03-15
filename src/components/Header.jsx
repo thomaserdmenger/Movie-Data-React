@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 
 export const Header = () => {
   return (
-    <header className='flex items-center p-6 justify-between mb-10 fixed top-0 w-full bg-[#232327] text-white'>
+    <header className='flex items-center p-6 justify-between mb-10 fixed top-0 left-0 right-0 z-50 w-full bg-[#232327] text-white max-w-screen-2xl m-auto'>
       <Link to='/' className='flex items-center gap-2 cursor-pointer'>
         <svg
           className='w-10 fill-white'

@@ -24,7 +24,7 @@ export const Home = () => {
 
   return (
     <>
-      <main>
+      <main className='max-w-screen-2xl m-auto'>
         <section className='flex flex-col pt-36 items-center bg-[#232327] pb-28'>
           <h1 className='text-5xl font-extralight mb-14 text-white text-center p-4'>
             Find the best movies to watch
