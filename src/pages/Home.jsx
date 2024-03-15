@@ -12,13 +12,16 @@ import { filterByUserInput } from "../assets/functions/filterByUserInput"
 export const Home = () => {
   // State for Movies Data
   const [data, setData] = useState(movies)
+  const [filteredData, setfilteredData] = useState([])
+  console.log(filteredData)
+  console.log(data)
 
   // State for User Input
   const [userInput, setUserInput] = useState("")
 
   // Set UserInput
   useEffect(() => {
-    filterByUserInput(userInput, data, setData)
+    filterByUserInput(userInput, data, setfilteredData)
   }, [userInput])
 
   return (
@@ -49,7 +52,7 @@ export const Home = () => {
         </form>
       </header>
       <main>
-        <RenderMovies data={data} />
+        <RenderMovies data={filteredData} />
       </main>
     </>
   )
