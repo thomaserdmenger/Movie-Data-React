@@ -7,7 +7,7 @@ export const RenderMovies = ({ data }) => {
         {data.map((movie, index) => {
           return (
             <Link
-              to={`/film/${index}`}
+              to={`/film/${movie.title}`}
               key={index}
               className='p-4 rounded-lg text-gray-300 bg-[#333B4D]'>
               <h2 className='text-xl font-bold mb-2'>{movie.title}</h2>
